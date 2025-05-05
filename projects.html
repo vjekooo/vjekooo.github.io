@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vjeko types code</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        padding: 20px;
+        background-color: #111827;
+        color: #d1d5db;
+      }
+
+      .active {
+        position: relative;
+        padding-bottom: 4px;
+      }
+
+      .active:after {
+        content: "•";
+        position: absolute;
+        bottom: 0;
+        right: -10px;
+        color: #d1d5db;
+      }
+
+
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          console.log('Checking link:', href, 'against current page:', currentPage);
+          if (href === currentPage) {
+            link.classList.add('active');
+          }
+        });
+      });
+    </script>
+</head>
+<body>
+<div class="container mx-auto">
+    <div class="w-1/3 flex gap-6 mb-4">
+        <a href="index.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+    </div>
+    <div class="w-2/3">
+        <section id="projects">
+            <ul>
+                <li><a href="https://www.fiona.com" target="_blank">Fiona</a></li>
+                <li><a href="https://www.shpock.com" target="_blank">Shpock</a></li>
+                <li><a href="https://inrento.com" target="_blank">InRento</a></li>
+                <li><a href="https://www.docscheduler.com" target="_blank">DocScheduler</a></li>
+            </ul>
+        </section>
+    </div>
+
+</div>
+</body>
+</html>
