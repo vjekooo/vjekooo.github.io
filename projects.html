@@ -15,19 +15,26 @@
       navLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (href === currentPage) {
-            link.classList.add('active');
+            link.classList.add(
+                'relative',
+                'after:content-["\u2022"]',
+                'after:absolute',
+                'after:bottom-0',
+                'after:right-[-10px]',
+                'after:text-accent'
+            );
         }
       });
     });
   </script>
 </head>
-<body>
+<body class="font-mono bg-background text-accent p-5">
 <div class="container mx-auto">
-  <div class="w-1/3 flex gap-6 mb-12 text-white">
-    <a href="index.html" class="nav-link">About</a>
-    <a href="projects.html" class="nav-link">Projects</a>
+  <div class="w-1/3 flex gap-6 mb-12">
+    <a href="index.html" class="nav-link flex justify-center items-center gap-4 pb-[3px] relative text-accent">About</a>
+    <a href="projects.html" class="nav-link flex justify-center items-center gap-4 pb-[3px] relative text-accent">Projects</a>
   </div>
-  <div class="w-2/3">
+  <div class="w-full lg:w-2/3">
     <section id="projects">
       <ul>
         <li><a href="https://www.fiona.com" target="_blank">Fiona</a></li>

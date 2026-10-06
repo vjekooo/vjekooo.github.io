@@ -6,7 +6,6 @@
   <title>Vjeko types code</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="styles.css">
-
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -16,21 +15,27 @@
       navLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (href === currentPage) {
-            link.classList.add('active');
+            link.classList.add(
+                'relative',
+                'after:content-["\u2022"]',
+                'after:absolute',
+                'after:bottom-0',
+                'after:right-[-10px]',
+                'after:text-accent'
+            );
         }
       });
     });
   </script>
-
 </head>
-<body>
+<body class="font-mono bg-background text-accent p-5">
 <div class="container mx-auto">
-  <div class="w-1/3 flex gap-6 mb-12 text-white">
-    <a href="index.html" class="nav-link">About</a>
-    <a href="projects.html" class="nav-link">Projects</a>
+  <div class="w-1/3 flex gap-6 mb-12">
+    <a href="index.html" class="nav-link flex justify-center items-center gap-4 pb-[3px] relative text-accent">About</a>
+    <a href="projects.html" class="nav-link flex justify-center items-center gap-4 pb-[3px] relative text-accent">Projects</a>
   </div>
-  <div class="w-2/3">
-    <h1 class="mb-4 text-white text-lg">VJEKOSLAV PAVICIN</h1>
+  <div class="w-full lg:w-2/3">
+    <h1 class="mb-16 text-2xl font-bold uppercase tracking-[0.1em]">VJEKOSLAV PAVICIN</h1>
     <p class="pb-4">
       I'm a full-stack software developer with deep expertise in front-end engineering, specializing in React and Next.js to build intuitive, responsive, and high-performance user interfaces. I also bring working experience with Solid.js and Angular, which gives me a solid grasp of modern framework paradigms and architectural patterns across the ecosystem.
     </p>
