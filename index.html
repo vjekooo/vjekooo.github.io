@@ -4,14 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vjeko types code</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-background: #F8F8FF;
+      --color-accent: #000;
+    }
+  </style>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-
       const navLinks = document.querySelectorAll('.nav-link');
-
       navLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (href === currentPage) {
@@ -70,7 +74,6 @@
           </svg>
         </a>
       </li>
-
     </ul>
   </div>
 </div>
